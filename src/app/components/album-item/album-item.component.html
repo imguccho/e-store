@@ -1,0 +1,15 @@
+<div class="album-item h-100" (click)="newItemEvent()">
+  <span class="album-badge" *ngIf="album.popular">Popular</span>
+  <div class="thumbnail-container"> 
+    <img [src]="album.thumbnailUrl" class="img-fluid w-100 h-100" alt="thumbnail">
+  </div>
+    <div class="album-content">
+      <div class="d-flex align-items-center mb-3" [ngClass]="album.type ? 'justify-content-between' : 'justify-content-end'">
+        <h4 *ngIf="album.type">
+          {{ album.type }}
+        </h4>
+        <p class="price">${{ album.price }}</p>
+      </div>
+      <h3>{{ album.title }}</h3>
+    </div>
+</div>

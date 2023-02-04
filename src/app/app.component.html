@@ -1,0 +1,3 @@
+<app-header *ngIf="loggedInUser" [isLoggedIn]="loggedInUser"></app-header>
+<router-outlet></router-outlet>
+<app-footer *ngIf="loggedInUser"></app-footer>

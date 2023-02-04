@@ -1,0 +1,61 @@
+<section class="login-container d-flex align-items-center">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="https://images.pexels.com/photos/7620629/pexels-photo-7620629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="login form" class="img-fluid banner-img" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-3 p-lg-5 text-black">
+
+                <form [formGroup]="loginForm" (submit)="onLogin()">
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <span class="h1 fw-bold mb-0">E-Store</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" formControlName="email" class="form-control form-control-lg"
+                      placeholder="Email address" />
+                    <span class="text-danger pl-1"
+                      *ngIf="(loginFormControl.email.touched || submitted) && loginFormControl.email.errors?.required">
+                      Email is required
+                    </span>
+                    <span class="text-danger pl-1"
+                      *ngIf="loginFormControl.email.touched && loginFormControl.email.errors?.email">
+                      Enter a valid email address
+                    </span>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" formControlName="password"
+                      class="form-control form-control-lg" placeholder="Password" />
+                    <span class="text-danger pl-1"
+                      *ngIf="(loginFormControl.password.touched || submitted) && loginFormControl.password.errors?.required">
+                      Password is required
+                    </span>
+                    <span class="text-danger pl-1"
+                      *ngIf="loginFormControl.password.touched && loginFormControl.password.errors?.invalidPassword">
+                      Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+                      letter and 1 number
+                    </span>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button type="submit" class="btn btn-dark btn-lg btn-block" [disabled]="!loginForm.valid">Login</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

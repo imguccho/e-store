@@ -1,0 +1,18 @@
+#footer {
+  color: #37423b;
+  font-size: 14px;
+  background: #e4e4e4;
+  .credits {
+	padding-top: 5px;
+	font-size: 13px;
+	a {
+	  color: #3cb661;
+	  transition: 0.3s;
+	}
+	a:hover {
+	  color: #478f5d;
+	}
+  }
+}
+
+

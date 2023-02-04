@@ -1,0 +1,27 @@
+<!-- ======= Photos Section ======= -->
+<section id="photos" class="photos">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Photos</h2>
+      <p>Photo Gallery</p>
+    </div>
+
+    <div class="row photos-container">
+      <div class="col-lg-3 col-md-6 photos-item filter-app" *ngFor="let photo of photosData">
+        <div class="photos-wrap">
+          <img [img-preloader]="photo.thumbnailUrl" lass="img-fluid w-100" alt="">
+          <div class="photos-info">
+            <h4>{{ photo.title }}</h4>
+            <div class="photos-links">
+              <a [attr.href]="photo.thumbnailUrl" class="photos-lightbox" title="Thumbnail Url"><i
+                  class="bx bx-plus"></i></a>
+              <a [attr.href]="photo.url" title="URL"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End photos Section -->
